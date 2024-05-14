@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany } from "typeorm";
+import { PackageEntity } from "./PackageEntity";
 
 @Entity("users")
 export class UserEntity {
@@ -19,4 +20,6 @@ export class UserEntity {
 
   @UpdateDateColumn()
   updated_at?: Date;
+
+  @OneToMany(() => PackageEntity, (packages) => packages.user, { nullable: true })  packages?: PackageEntity[];
 }
