@@ -10,5 +10,4 @@ declare module "express" {
 
 export interface AuthRequest extends Request {
   user?: UserEntity;
-  authorized?: boolean;
 }

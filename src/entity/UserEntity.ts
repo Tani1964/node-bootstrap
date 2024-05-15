@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, OneToMany } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { PackageEntity } from "./PackageEntity";
 
 @Entity("users")
@@ -12,7 +12,7 @@ export class UserEntity {
   @Column()
   email!: string;
 
-  @Column()
+  @Column({select: false})
   password!: string;
 
   @CreateDateColumn()

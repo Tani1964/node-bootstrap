@@ -13,6 +13,12 @@ export class PackageEntity{
     created_at?: Date;
 
     @Column()
+    updated_at?: Date;
+    
+    @Column()
+    pickup_date?: Date;
+
+    @Column()
     status!: string;
 
     @ManyToOne(() => UserEntity, user => user.packages, { nullable: false })

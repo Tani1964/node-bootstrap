@@ -1,7 +1,8 @@
 import { Application } from "express";
-import healthCheckRoute from "../routes/healthCheckRoute";
-import userRoutes from "../routes/controllers/userRoutes";
+import { authenticateJWT } from "../middlewares/authorization";
 import packageRoutes from "../routes/controllers/packageRoutes";
+import userRoutes from "../routes/controllers/userRoutes";
+import healthCheckRoute from "../routes/healthCheckRoute";
 
 
 export default function setupRoutes(app: Application): void {
